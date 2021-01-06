@@ -1,0 +1,44 @@
+.myPosts{
+    margin: 10px;
+}
+
+.myPosts button{
+    background-color: #e52046;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid rgb(91, 91, 99);
+    margin-left: 5px;
+    color: rgb(91, 91, 99);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.myPostsHeader{
+    color: rgb(91, 91, 99);
+    font-weight: 700;
+    text-align: center;
+}
+
+.myPostsHeader img{
+    width: 50px;
+    margin: -10px;
+}
+
+.myPostsHeader span{
+    color:  #e52046;
+}
+
+.myPostsList{
+    display: flex;
+    justify-content: space-around;
+}
+
+.myPostsAddArea{
+    display: flex;
+}
+
+.myPostsTextarea textarea{
+    border: 2px solid rgb(91, 91, 99);
+    border-radius: 5px;
+}

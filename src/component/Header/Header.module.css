@@ -1,0 +1,29 @@
+.header {
+  background: linear-gradient(to top, rgb(230, 236, 243), rgb(101, 152, 211));
+  grid-area: head;
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px #434a5f;
+  height: 70px;
+}
+
+.headerLogo {
+  display: flex;
+  margin-bottom: 5%;
+}
+
+.headerImg img {
+  width: 60px;
+  margin-right: -12px;
+}
+
+.headerTitle {
+  font-weight: 500;
+  color: rgb(91, 91, 99);
+  font-size: 30px;
+}
+
+.headerTitleSpan {
+  color: #e52046;
+  font-size: 50px;
+  font-weight: 900;
+}

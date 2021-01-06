@@ -1,0 +1,17 @@
+.profileInfoImg{
+    margin: 10px;
+    border: 2px solid  #434a5f;
+    border-radius: 5px;
+    width: 50%;
+    height: 400px;
+    background-image: url("https://pbs.twimg.com/profile_images/587339027059060737/2h21MOHN.jpg");
+    background-size: cover;
+}
+
+.profileInfoName{
+    color: #434a5f;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 10px;
+
+}

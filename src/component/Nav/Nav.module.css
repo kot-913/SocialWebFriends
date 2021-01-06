@@ -1,0 +1,17 @@
+.nav{
+    background-color:rgb(101, 152, 211);
+    grid-area: nav;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px #434a5f;
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 1.2em;
+    padding: 10%;
+    
+}
+
+.activeLink{
+    font-size: 30px;
+    font-weight: 700;
+    color:  #b6c1ec;
+}
