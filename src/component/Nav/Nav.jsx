@@ -1,8 +1,10 @@
 import React from "react";
 import classes from "./Nav.module.css";
 import {NavLink} from "react-router-dom";
+import SideBar from "./SideBar/SideBar";
 
-const Nav = () => {
+const Nav = (props) => {
+
   return (
     <div className={classes.nav}>
       <div>
@@ -20,6 +22,8 @@ const Nav = () => {
       <div>
         <NavLink to="/media" activeClassName={classes.activeLink}>Media</NavLink>
       </div>
+      <SideBar state={props.state.sideBar}/>
+
     </div>
   );
 };

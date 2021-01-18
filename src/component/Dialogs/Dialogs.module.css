@@ -1,6 +1,6 @@
 .dialogs{
  display: grid;
- grid-template-columns: 2fr 10fr;
+ grid-template-columns: 6fr 6fr;
  margin: 10px;
 } 
 
@@ -8,4 +8,8 @@
     font-size: 25px;
     font-weight: 600;
     color:  #b5bfe9;
+}
+
+.dialogsMessages{
+    text-align: left;
 }

@@ -1,0 +1,11 @@
+.messageItem{
+    color: #434a5f;
+}
+
+.messageItem img{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 2%;
+}
