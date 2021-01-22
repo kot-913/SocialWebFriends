@@ -38,4 +38,10 @@ sideBar: {
 },
 }
 
+export let addNewPost = (postMassage) => {
+  state.dialogs.messageData.push(
+    { id: 11, message: postMassage, imgUrl: "https://i.insider.com/5ebbfc9ffc593d729d60df73?width=1136&format=jpeg" }
+  )
+}
+
 export default state;
