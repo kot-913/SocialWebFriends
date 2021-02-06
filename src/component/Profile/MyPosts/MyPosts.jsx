@@ -4,20 +4,25 @@ import Post from "./Post/Post";
 
 
 const MyPosts = (props) => {
-
 let postTextarea = React.createRef();
 let addPost = () => {
   let newPost = postTextarea.current.value;
-  alert(newPost);
+  props.addNewPost(newPost);
 }
 
   let posts =  props.postData.map((postItem) => (
     <Post key={postItem.id} title={postItem.title} countLike={postItem.countLike} />));
+
+    let onTextChange = () => {
+      let text = postTextarea.current.value;
+      props.updateNewPostText(text);
+    };
+
   return (
     <div className={classes.myPosts}>
       <div className={classes.myPostsAddArea}>
         <div className={classes.myPostsTextarea}>
-          <textarea cols="50" rows="6" ref={postTextarea}></textarea>
+          <textarea cols="50" rows="6" ref={postTextarea} value={props.newPostText} onChange = {onTextChange}></textarea>
         </div>
         <button onClick={addPost}>ADD NEW POST</button>
       </div>

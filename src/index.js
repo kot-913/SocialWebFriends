@@ -1,22 +1,25 @@
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import state, {subscribe} from "./Data/state";
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import state from "./Data/state";
-import {addNewPost} from "./Data/state";
+import {addNewPost, updateNewPostText} from "./Data/state";
 import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App state={state} addNewPost={ addNewPost }/>
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+let renderTree = (state) => {
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+  ReactDOM.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App state={state} addNewPost={ addNewPost } updateNewPostText={updateNewPostText}/>
+      </BrowserRouter>
+    </React.StrictMode>,
+    document.getElementById("root")
+  )}; 
+renderTree(state); 
+
+subscribe(renderTree);
+
 reportWebVitals();

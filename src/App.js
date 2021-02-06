@@ -17,8 +17,8 @@ function App(props) {
       <Header />
       <Nav state={props.state.nav}/>
       <div className={classes.appContent}>
-        <Route path='/profile' render={() => <Profile state={props.state.profile} />}/>
-        <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogs} addNewPost = {props.addNewPost}/>}/>
+        <Route path='/profile' render={() => <Profile profile={props.state.profile} newPostText={props.state.dialogs.newPostText} addNewPost={props.addNewPost} updateNewPostText={props.updateNewPostText}/>}/>
+        <Route path='/dialogs' render={() => <Dialogs dialogs={props.state.dialogs} addNewPost = {props.addNewPost} updateNewPostText={props.updateNewPostText} />}/>
         <Route path='/groups' render={() => <Groups />}/>
         <Route path='/media' render={() => <Media />}/>
         <Route path='/news' render={() => <News />}/>

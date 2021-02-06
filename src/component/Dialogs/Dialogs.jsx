@@ -8,20 +8,26 @@ const Dialogs = (props) => {
   let addNewPostText = () => {
   let postText = newPostArea.current.value;
  props.addNewPost(postText);
+ newPostArea.current.value = "";
 }
-  let dialogs = props.state.dialogData.map((dialogItem) => (
+  let dialogs = props.dialogs.dialogData.map((dialogItem) => (
     <Dialog key={dialogItem.id} name={dialogItem.name} id={dialogItem.id} imgUrl={dialogItem.imgUrl} />
   ));
-  let messages = props.state.messageData.map((messageItem) => (
+  let messages = props.dialogs.messageData.map((messageItem) => (
     <Message key={messageItem.id} message={messageItem.message} imgUrl={messageItem.imgUrl} />
   ));
+
+  let onTextChange = () => {
+    let text = newPostArea.current.value;
+    props.updateNewPostText(text);
+  };
 
   return (
 <>
     <div className={classes.myPosts}>
       <div className={classes.myPostsAddArea}>
         <div className={classes.myPostsTextarea}>
-          <textarea cols="50" rows="6" ref={newPostArea}></textarea>
+          <textarea cols="50" rows="6" ref={newPostArea} value= {props.dialogs.newPostText} onChange = {onTextChange}></textarea>
         </div>
         <button onClick = { addNewPostText }>ADD NEW POST</button>
       </div>
