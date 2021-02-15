@@ -6,9 +6,8 @@ import Message from "./Message/Message";
 const Dialogs = (props) => {
   let newPostArea = React.createRef();
   let addNewPostText = () => {
-  let postText = newPostArea.current.value;
- props.addNewPost(postText);
- newPostArea.current.value = "";
+  let action = {type: "ADD-NEW-POST"}
+  props.dispatch(action);
 }
   let dialogs = props.dialogs.dialogData.map((dialogItem) => (
     <Dialog key={dialogItem.id} name={dialogItem.name} id={dialogItem.id} imgUrl={dialogItem.imgUrl} />
@@ -19,7 +18,8 @@ const Dialogs = (props) => {
 
   let onTextChange = () => {
     let text = newPostArea.current.value;
-    props.updateNewPostText(text);
+    let action = {type: "UPDATE-NEW-POST-TEXT", newText: text};
+    props.dispatch(action);
   };
 
   return (

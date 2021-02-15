@@ -6,8 +6,8 @@ import Post from "./Post/Post";
 const MyPosts = (props) => {
 let postTextarea = React.createRef();
 let addPost = () => {
-  let newPost = postTextarea.current.value;
-  props.addNewPost(newPost);
+  let action = {type: "ADD-NEW-POST"}
+  props.dispatch(action);
 }
 
   let posts =  props.postData.map((postItem) => (
@@ -15,7 +15,8 @@ let addPost = () => {
 
     let onTextChange = () => {
       let text = postTextarea.current.value;
-      props.updateNewPostText(text);
+      let action = {type: "UPDATE-NEW-POST-TEXT", newText: text};
+      props.dispatch(action);
     };
 
   return (
