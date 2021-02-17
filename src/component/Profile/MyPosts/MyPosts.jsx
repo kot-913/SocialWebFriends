@@ -1,12 +1,14 @@
 import React from "react";
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import {AddNewPostActionCreater, UpdateNewPostTextActionCreator} from "./../../../Data/state";
+
 
 
 const MyPosts = (props) => {
 let postTextarea = React.createRef();
 let addPost = () => {
-  let action = {type: "ADD-NEW-POST"}
+  let action = (AddNewPostActionCreater());
   props.dispatch(action);
 }
 
@@ -15,7 +17,7 @@ let addPost = () => {
 
     let onTextChange = () => {
       let text = postTextarea.current.value;
-      let action = {type: "UPDATE-NEW-POST-TEXT", newText: text};
+      let action = UpdateNewPostTextActionCreator(text);
       props.dispatch(action);
     };
 

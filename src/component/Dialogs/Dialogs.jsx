@@ -2,11 +2,12 @@ import React from "react";
 import classes from "./Dialogs.module.css";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
+import {AddNewPostActionCreater, UpdateNewPostTextActionCreator} from "./../../Data/state";
 
 const Dialogs = (props) => {
   let newPostArea = React.createRef();
   let addNewPostText = () => {
-  let action = {type: "ADD-NEW-POST"}
+  let action = (AddNewPostActionCreater());
   props.dispatch(action);
 }
   let dialogs = props.dialogs.dialogData.map((dialogItem) => (
@@ -18,7 +19,7 @@ const Dialogs = (props) => {
 
   let onTextChange = () => {
     let text = newPostArea.current.value;
-    let action = {type: "UPDATE-NEW-POST-TEXT", newText: text};
+    let action = (UpdateNewPostTextActionCreator(text));
     props.dispatch(action);
   };
 
