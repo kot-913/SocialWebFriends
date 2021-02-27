@@ -3,7 +3,7 @@
     padding: 0 5%;
     padding-bottom: 10px;
     display: grid;
-    background-color: rgb(210, 196, 223);
+    background-color: #d2c4df;
     grid-template-areas:
     "head head"
     "nav main";
@@ -15,14 +15,14 @@
 
 a{
 text-decoration: none;
-color: rgb(91, 91, 99);
+color: #5b5b63;
 }
 
 .appContent{
         grid-area: main;
         width: 100%;
         border-radius: 5px;
-        background: linear-gradient(to top,  rgb(230, 236, 243), rgb(101, 152, 211));
+        background: linear-gradient(to top,  #e6ecf3, #6598d3);
         box-shadow: inset 0 0 10px #434a5f;
         border-radius: 5px;
         margin-top: 10px;

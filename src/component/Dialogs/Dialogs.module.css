@@ -1,7 +1,7 @@
 
 .myPosts{
     margin: 10px;
-    margin-bottom: 5с0px;
+    margin-bottom: 50px;
 }
 
 .myPosts button{
@@ -9,9 +9,9 @@
     width: 100px;
     height: 50px;
     border-radius: 5px;
-    border: 2px solid rgb(91, 91, 99);
+    border: 2px solid #5b5b63;
     margin-left: 5px;
-    color: rgb(91, 91, 99);
+    color: #5b5b63;
     font-size: 15px;
     font-weight: 600;
 }
@@ -21,7 +21,7 @@
 }
 
 .myPostsTextarea textarea{
-    border: 2px solid rgb(91, 91, 99);
+    border: 2px solid #5b5b63;
     border-radius: 5px;
 }
 
@@ -39,4 +39,21 @@
 
 .dialogsMessages{
     text-align: left;
+}
+
+.myMessageTextarea textarea{
+    border: 2px solid #5b5b63;
+    border-radius: 5px;
+}
+
+.messageArea button{
+    background-color: #e52046;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid #5b5b63;
+    margin-left: 5px;
+    color: #5b5b63;
+    font-size: 12px;
+    font-weight: 600;
 }

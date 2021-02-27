@@ -9,3 +9,9 @@
     object-fit: cover;
     margin-right: 2%;
 }
+
+.activeLink{
+    font-size: 25px;
+    font-weight: 900;
+    color:  #5b5b63;
+}

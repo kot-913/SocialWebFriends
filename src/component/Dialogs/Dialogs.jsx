@@ -2,42 +2,44 @@ import React from "react";
 import classes from "./Dialogs.module.css";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
-import {AddNewPostActionCreater, UpdateNewPostTextActionCreator} from "./../../Data/state";
+import {UpdateNewMessageBodyCreator, SendMessageCreater} from "../../Data/state";
 
 const Dialogs = (props) => {
-  let newPostArea = React.createRef();
-  let addNewPostText = () => {
-  let action = (AddNewPostActionCreater());
-  props.dispatch(action);
-}
-  let dialogs = props.dialogs.dialogData.map((dialogItem) => (
+
+  let state = props.store.getState().dialogs;
+  let dialogs = state.dialogData.map((dialogItem) => (
     <Dialog key={dialogItem.id} name={dialogItem.name} id={dialogItem.id} imgUrl={dialogItem.imgUrl} />
   ));
-  let messages = props.dialogs.messageData.map((messageItem) => (
+  let messages = state.messageData.map((messageItem) => (
     <Message key={messageItem.id} message={messageItem.message} imgUrl={messageItem.imgUrl} />
   ));
-
-  let onTextChange = () => {
-    let text = newPostArea.current.value;
-    let action = (UpdateNewPostTextActionCreator(text));
-    props.dispatch(action);
-  };
+  let newMessageBody = state.newMessageBody;
+  let onSendMessageClick = () => {
+    props.store.dispatch(SendMessageCreater());
+  }
+  let onNewMessageChange = (e) => {
+let body = e.target.value;
+props.store.dispatch(UpdateNewMessageBodyCreator(body));
+  }
 
   return (
 <>
-    <div className={classes.myPosts}>
-      <div className={classes.myPostsAddArea}>
-        <div className={classes.myPostsTextarea}>
-          <textarea cols="50" rows="6" ref={newPostArea} value= {props.dialogs.newPostText} onChange = {onTextChange}></textarea>
-        </div>
-        <button onClick = { addNewPostText }>ADD NEW POST</button>
-      </div>
-      </div>
     <div className={classes.dialogs}>
       <div className={classes.dialogsItems}>{dialogs}</div>
-
       <div className={classes.dialogsMessages}>{messages}</div>
     </div>
+    <div className={classes.messageArea}>
+      <div className={classes.myMessageTextarea}>
+        <textarea 
+            cols="40" 
+            rows="4" 
+            value = {newMessageBody} 
+            onChange = {onNewMessageChange}
+            placeholder="Enter you message">
+        </textarea>
+      </div>
+      <div><button onClick={onSendMessageClick}>SEND MESSAGE</button></div>
+</div>
     </>
   );
 };
