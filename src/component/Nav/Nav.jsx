@@ -3,6 +3,7 @@ import classes from "./Nav.module.css";
 import {NavLink} from "react-router-dom";
 import SideBar from "./SideBar/SideBar";
 
+
 const Nav = (props) => {
 
   return (
@@ -22,7 +23,7 @@ const Nav = (props) => {
       <div>
         <NavLink to="/media" activeClassName={classes.activeLink}>Media</NavLink>
       </div>
-      <SideBar state={props.state.sideBar}/>
+      <SideBar state={props.state}/>
 
     </div>
   );

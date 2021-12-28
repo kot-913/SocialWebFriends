@@ -2,11 +2,11 @@ import React from "react";
 import classes from "./Dialogs.module.css";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
-import {UpdateNewMessageBodyCreator, SendMessageCreater} from "../../Data/state";
+import {UpdateNewMessageBodyCreator, SendMessageCreater} from "../../Data/dialogsReducer";
 
 const Dialogs = (props) => {
+  let state = props.store.state.dialogsReducer;
 
-  let state = props.store.getState().dialogs;
   let dialogs = state.dialogData.map((dialogItem) => (
     <Dialog key={dialogItem.id} name={dialogItem.name} id={dialogItem.id} imgUrl={dialogItem.imgUrl} />
   ));

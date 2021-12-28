@@ -9,16 +9,15 @@ import Groups from "./component/Groups/Groups";
 import Media from "./component/Media/Media";
 import News from "./component/News/News";
 
-
-
 function App(props) {
+console.log(props)
   return (
     <div className={classes.app}>
       <Header />
-      <Nav state={props.state.nav}/>
+      <Nav state={props.state.navReducer.sideBar.friendOnLineData}/>
       <div className={classes.appContent}>
-        <Route path='/profile' render={() => <Profile profile={props.state.profile} newPostText={props.state.profile.newPostText} dispatch={props.dispatch}/>}/>
-        <Route path='/dialogs' render={() => <Dialogs store = {props.store} dispatch={props.dispatch} />}/>
+        <Route path='/profile' render={() => <Profile profile={props.state.profileReducer.postData} newPostText={props.state.profileReducer.newPostText} dispatch={props.dispatch}/>}/>
+        <Route path='/dialogs' render={() => <Dialogs store = {props} dispatch={props.dispatch} />}/>
         <Route path='/groups' render={() => <Groups />}/>
         <Route path='/media' render={() => <Media />}/>
         <Route path='/news' render={() => <News />}/>

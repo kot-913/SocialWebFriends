@@ -3,8 +3,7 @@ import classes from "./SideBar.module.css";
 import FriendOnLine from "./FriendOnLine/FriendOnLine";
 
 const SideBar = (props) => {
-
-    let friendOnLine = props.state.friendOnLineData.map((friendOnLineItem) => (
+    let friendOnLine = props.state.map((friendOnLineItem) => (
         <FriendOnLine key={friendOnLineItem.id} name={friendOnLineItem.name} id={friendOnLineItem.id} imgUrl={friendOnLineItem.imgUrl} />
       ));
 return (

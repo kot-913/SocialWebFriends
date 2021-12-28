@@ -1,14 +1,14 @@
 import React from "react";
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import {AddNewPostActionCreater, UpdateNewPostTextActionCreator} from "./../../../Data/state";
+import {AddNewPostActionCreator, UpdateNewPostTextActionCreator} from "./../../../Data/profileReducer";
 
 
 
 const MyPosts = (props) => {
 let postTextarea = React.createRef();
 let addPost = () => {
-  let action = (AddNewPostActionCreater());
+  let action = (AddNewPostActionCreator());
   props.dispatch(action);
 }
 

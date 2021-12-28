@@ -1,6 +1,6 @@
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import store from "./Data/state";
+import store from "./Data/redux-store";
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -19,6 +19,10 @@ let renderTree = (state) => {
   )}; 
 renderTree(store.getState()); 
 
-store.subscribe(renderTree);
+store.subscribe(() => {
+  let state = store.getState();
+  renderTree(state)
+}
+);
 
 reportWebVitals();
